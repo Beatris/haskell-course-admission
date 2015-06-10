@@ -5,17 +5,35 @@ class FastestRouteCalculator():
         self.start = start
         self.end = end
         self.path = path
+        self.paths = self.find_all_routes(self.graph, self.start, self.end)
 
-    def find_all_routes(self):
+    def find_all_routes(self, graph, start, end, path=[]):
         '''
         Find all possible paths between
         two nodes in a graph.
         '''
-        pass
+        paths = []
+        path = path + [start]
+
+        for node in graph[start]:
+            if node not in path:
+                if node in graph:
+                    new_paths = self.find_all_routes(graph, node, end, path)
+                    for new_path in new_paths:
+                        paths.append(new_path)
+                else:
+                    new_path = path + [node]
+                    paths.append(new_path)
+        return paths
 
     def find_fastest_route(self):
         '''
         Find the shortest path from all
         possible paths between nodes in a graph.
         '''
-        pass
+        routes_lenghts = {}
+        for path in self.paths:
+            path_len = len(path)
+            routes_lenghts[path_len] = path
+        shortest_distance = min(routes_lenghts.keys())
+        return routes_lenghts[shortest_distance]
