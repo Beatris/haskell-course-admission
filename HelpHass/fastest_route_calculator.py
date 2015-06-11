@@ -21,7 +21,7 @@ class FastestRouteCalculator():
                     new_paths = self.find_all_routes(graph, node, end, path)
                     for new_path in new_paths:
                         paths.append(new_path)
-                else:
+                if node == end:
                     new_path = path + [node]
                     paths.append(new_path)
         return paths
@@ -32,7 +32,7 @@ class FastestRouteCalculator():
         possible paths between nodes in a graph.
         '''
         self.paths =\
-         self.find_all_routes(self.graph, self.start, self.end, self.path)
+            self.find_all_routes(self.graph, self.start, self.end, self.path)
 
         fastest_route = min(self.paths, key=len)
         return fastest_route
