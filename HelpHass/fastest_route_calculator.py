@@ -1,4 +1,4 @@
-class FastestRouteCalculator():
+class FastestRouteCalculator:
 
     def __init__(self, graph, start, end, path=''):
         self.graph = graph
