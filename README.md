@@ -2,9 +2,10 @@
 The admission tasks for a Haskell Course by Hack Bulgaria 
 (https://github.com/HackBulgaria/Haskell-1.git)
 
-The task is written on Python and compatible with Python 2.7
+All tasks are written on Python and compatible with Python 2.7
 
 To execute:
 ```
-python -m HelpHass
+python -m <module_name>
 ```
+where <modulde_name> is the name of the different tasks, e.g HelpHass...
