@@ -7,7 +7,7 @@ END_STATION = 'L'
 routes = []
 
 # Procces the input:
-print("Input:")
+print "Input:"
 while True:
     input_str = raw_input()
     route = input_str.split(" ")
@@ -25,5 +25,5 @@ fastest_route_calculator =\
     FastestRouteCalculator(graph, START_STATION, END_STATION)
 
 fastest_route = fastest_route_calculator.find_fastest_route()
-print("Output:")
-print(' '.join(fastest_route))
+print "Output:"
+print ' '.join(fastest_route)
