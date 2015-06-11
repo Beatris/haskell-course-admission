@@ -1,7 +1,8 @@
-class GraphConstructor():
+class GraphConstructor:
 
     def __init__(self, routes):
         self.routes = routes
+        self.graph = {}
 
     def construct_graph(self):
         '''
@@ -13,9 +14,10 @@ class GraphConstructor():
             node = route[0]
             arc = route[1]
             if node not in graph.keys():
-                graph[node] = arc
+                graph[node] = list(arc)
             else:
                 graph[node] = list(graph[node])
                 graph[node].append(arc)
 
+        self.graph = graph
         return graph
