@@ -1,21 +1,15 @@
-# Procces the input:
+from language_finder import LanguageFinder
+
+
 print "Input:"
 while True:
-    input_str = raw_input()
-    route = input_str.split(" ")
-    if input_str == "":
+    language_pattern = raw_input()
+    if language_pattern == "":
         break
-    else:
-        routes.append(route)
+    word = raw_input()
+    if word == "":
+       	break
 
-# Construct the graph:
-graph_constructor = GraphConstructor(routes)
-graph = graph_constructor.construct_graph()
-
-# Find the shortest path between given nodes:
-fastest_route_calculator =\
-    FastestRouteCalculator(graph, START_STATION, END_STATION)
-
-fastest_route = fastest_route_calculator.find_fastest_route()
-print "Output:"
-print ' '.join(fastest_route)
+    lang_finder = LanguageFinder(language_pattern, word)
+    print "Output: "
+    print ("no", "yes")[lang_finder.is_word_from_lang]
