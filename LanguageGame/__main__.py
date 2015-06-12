@@ -8,7 +8,7 @@ while True:
         break
     word = raw_input()
     if word == "":
-       	break
+        break
 
     lang_finder = LanguageFinder(language_pattern, word)
     print "Output: "
