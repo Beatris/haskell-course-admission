@@ -1,8 +1,8 @@
 from language_finder import LanguageFinder
 
 
-print "Input:"
 while True:
+    print "Input:"
     language_pattern = raw_input()
     if language_pattern == "":
         break
